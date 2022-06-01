@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block stylesheets %}
+    <title>Website menu 09</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+{% endblock %}
+
+{% block body %}
+    <div id="colorlib-main">
+        <section class="ftco-section pt-4 mb-5 ftco-intro">
+            <div class="container-fluid px-3 px-md-0">
+                <div class="row">
+                    <div class="col-md-12 mb-2">
+
+                    </div>
+                    {% for postOllq in postOll %}
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ postOllq.heading}}</h5>
+                                    <p class="card-text">{{ postOllq.content}}</p>
+                                    <a href="" class=" btn-sm">{{ postOllq.date|format_datetime(pattern='dd',locale='en') }}</a>
+                                    <a href="" class="btn  btn-sm">{{ postOllq.views}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </div><!-- END COLORLIB-MAIN -->
+
+{% endblock %}
